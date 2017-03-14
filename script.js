@@ -1,13 +1,12 @@
 jQuery(function() {
 
 //create board and show rules
-
+  $('div#board').hide();  //hide cafe board by default
   function displayBoard(){
-    // let $startButton = $('button#start');
-    let $startButton = $('button#start');
-    //if start button is pressed, hide rules then display empty cafe
+    //if start button is pressed
     $('button#start').click(function() {
-      $('div#rules').hide();
+      $('div#rules').hide(); //hide rules
+      $('div#board').show(); //then display empty cafe
       console.log("button clicked");
     });
   }
