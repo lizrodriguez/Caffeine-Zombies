@@ -4,10 +4,10 @@ h1{
   color: #000000;
 }
 
-div#board {
+div#rules {
   background: #eee;
-  width: 720px;
-  height: 480px;
+  width: 800px;
+  height: 600px;
   text-align:center;
 }
 
@@ -30,4 +30,11 @@ p {
   text-align: left;
   font-family: 'VT323', monospace;
   font-size: 28px;
+}
+
+div#board {
+  background-image: url("images/coffee_shop.jpg");
+  width: 800px;
+  height: 600px;
+  text-align:center;
 }
