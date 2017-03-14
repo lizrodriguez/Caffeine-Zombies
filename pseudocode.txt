@@ -1,0 +1,10 @@
+1. rules will show
+2. press start
+3. board will show
+4. enemies will (radomly) be on the screen
+5. they will "pop out" after X number of seconds
+6. try to shoot enemy
+    if you shoot enemy, you score points and they sleep (die)
+    if you don't shoot enemy, enemy comes closer, they score points
+    then (re-draw screen with enemy in a random place)
+

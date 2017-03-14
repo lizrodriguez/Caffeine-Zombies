@@ -1,4 +1,33 @@
 h1{
-  font-family: "Verdana", Arial, sans-serif;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color: #000000;
+}
+
+div#board {
+  background: #eee;
+  width: 720px;
+  height: 480px;
+  text-align:center;
+}
+
+button {
+  margin: 0 auto;
+  background-color: #000000;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 14px 30px;
+  text-align: center;
   font-size: 20px;
+}
+
+button:hover {
+  box-shadow: 5px 5px 5px #888888;
+}
+
+p {
+  text-align: left;
+  font-family: 'VT323', monospace;
+  font-size: 28px;
 }
