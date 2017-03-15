@@ -60,4 +60,18 @@ p#board {
   background-image: url("images/caffeine_zombie_in.png");
   width: 128px;
   height: 128px;
+
+  float: left;
+    margin: 4em 1em;
+    width: 100px;
+    height: 100px;
+    line-height: 60px;
+    text-align: center;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
+
+.zombies:hover {
+    -webkit-transform: translate(3em,0);
+    transform: translate(3em,0);
+  }
