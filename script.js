@@ -1,23 +1,29 @@
 jQuery(function() {
-
-//create board and show rules
-  $('div#board').hide();  //hide cafe board by default
+  //create board and show rules
   function displayBoard(){
+    $('div#board').hide();  //hide cafe board by default
     //if start button is pressed
     $('button#start').click(function() {
       $('div#rules').hide(); //hide rules
       $('div#board').show(); //then display empty cafe
-      console.log("button clicked");
+      console.log("start button clicked");
     });
   }
-
   displayBoard();
 
-    //display background stuff
+    $('button#ready').click(function() {
+    console.log("ready button clicked");
+    $('p#board').remove();
+    $('button#ready').remove();
+    createZombie();
+    });
 
-  // function createZombies(){
-
-  // }
-
+  function createZombie(){
+    let $zombies = $('div').last().addClass('zombies');
+      // setTimeout(function(){
+      // $('div#zombie').show();
+      // }, 2000); //hide the p text after 5 seconds
+  }
+  // createZombie();
 
 });

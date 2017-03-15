@@ -1,13 +1,23 @@
-h1{
+h1 {
   font-family: 'VT323', monospace;
   font-size: 30px;
   color: #000000;
 }
 
-div#rules {
-  background: #eee;
+h2 {
+  padding: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color: #FFFFFF;
+}
+
+div {
   width: 800px;
   height: 600px;
+}
+
+div#rules {
+  background: #eee;
   text-align:center;
 }
 
@@ -26,7 +36,8 @@ button:hover {
   box-shadow: 5px 5px 5px #888888;
 }
 
-p {
+p#rules {
+  padding: 20px;
   text-align: left;
   font-family: 'VT323', monospace;
   font-size: 28px;
@@ -34,7 +45,20 @@ p {
 
 div#board {
   background-image: url("images/coffee_shop.jpg");
-  width: 800px;
-  height: 600px;
+  text-align:center;
+}
+
+p#board {
+  text-align: center;
+  padding: 10px;
+  font-family: 'VT323', monospace;
+  font-size: 50px;
+  color: #FFFFFF;
+}
+
+.zombies {
+  background-image: url("images/caffeine_zombie_in.png");
+  width: 128px;
+  height: 128px;
   text-align:center;
 }
