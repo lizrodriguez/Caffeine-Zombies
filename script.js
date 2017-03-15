@@ -20,9 +20,12 @@ jQuery(function() {
 
   function createZombie(){
     let $zombies = $('div').last().addClass('zombies');
-      // setTimeout(function(){
-      // $('div#zombie').show();
-      // }, 2000); //hide the p text after 5 seconds
+    $zombies.appendTo($('<div id="board>'));
+
+    // $zombies.first($('<div id="board" style="display: block;">'));
+    // setTimeout(function(){
+    // $('div#zombie').show();
+    // }, 2000); //hide the p text after 5 seconds
   }
   // createZombie();
 
