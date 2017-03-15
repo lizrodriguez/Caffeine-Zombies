@@ -4,7 +4,7 @@ x 3. board will show
 4. enemies will (radomly) appear on the screen
 5. they will "pop out" after X number of seconds
 6. try to shoot espresso at enemy
-    6a. if you shoot enemy, you score points and they wake up and become happy
-    6b. if you don't shoot enemy, enemy comes closer, gets crankier,they score points
+    6a. if you shoot enemy (click), you score points and they become happy, earn points
+    6b. if you don't shoot enemy, enemy comes closer,they score points
         then (re-draw screen with enemy in a random place)
 7. you lose if enemy reaches counter or

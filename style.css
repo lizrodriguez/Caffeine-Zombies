@@ -69,3 +69,10 @@ p#board {
   width: 128px;
   height: 128px;
 }
+
+.zombiehappy {
+  position: relative;
+  background-image: url("images/caffeine_zombie_happy.png");
+  width: 128px;
+  height: 128px;
+}

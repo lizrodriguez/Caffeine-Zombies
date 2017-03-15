@@ -25,14 +25,21 @@ jQuery(function() {
       $zombies.css('left', Math.random() * 600);
       setTimeout(function(){
       angryZombie();
-      }, 3000);
+      }, Math.random()*5000); //after a few seconds, show zombieout
     }
 
     function angryZombie(){
-      //after a few seconds, show zombieout
       let $zombies = $('div').last().addClass('zombieout');
       $zombies.appendTo($('<div id="board>'));
-
     }
+
+    function shootZombie(){
+      let $zombies = $('div').last();
+      $zombies.appendTo($('<div id="board>'));
+      $zombies.on("click", function(){
+      $zombies.addClass('zombiehappy');
+      });
+    }
+shootZombie();
 
 });
