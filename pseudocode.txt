@@ -1,10 +1,18 @@
 x 1. rules will show
 x 2. press start
 x 3. board will show
-4. enemies will (radomly) appear on the screen
-5. they will "pop out" after X number of seconds
+4. enemies will appear on the screen
+x  4a. randomly assign position
+   4b. new zombie every 1 second
+x 5. they will "pop out" after X number of seconds
 6. try to shoot espresso at enemy
-    6a. if you shoot enemy (click), you score points and they become happy, earn points
-    6b. if you don't shoot enemy, enemy comes closer,they score points
+    6a. if you shoot enemy (click), you score points and they become happy, disappear after 1 sec
+    6b. if zombie doesn't get hit after 3 seconds, then increase its score, disappear after 1 sec
+      6.b.i. enemy comes closer
         then (re-draw screen with enemy in a random place)
-7. you lose if enemy reaches counter or
+7. you lose if enemy reaches counter
+8. create timer countdown for game (10 seconds down to 0)
+  x 8a. countdown appears on corner of screen
+  x 8b. when timer = 0, game is over, tally is score
+
+fundamentals - try to make zombies happy after 10 seconds

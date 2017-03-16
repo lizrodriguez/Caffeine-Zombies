@@ -43,12 +43,12 @@ p#rules {
   font-size: 28px;
 }
 
-div#board {
+#board {
   background-image: url("images/coffee_shop.jpg");
   text-align:center;
 }
 
-p#board {
+#boardInstruction {
   text-align: center;
   padding: 10px;
   font-family: 'VT323', monospace;
@@ -56,22 +56,43 @@ p#board {
   color: #FFFFFF;
 }
 
+#timer {
+  top: 10px;
+  left: 700px;
+  position: absolute;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#gameover {
+  position: absolute;
+  font-family: 'VT323', monospace;
+  font-size: 80px;
+  color: #FFFFFF;
+  text-align: center;
+  width: 800px;
+  top:200px;
+}
+
 .zombiein {
-  position: relative;
+  position: absolute;
   background-image: url("images/caffeine_zombie_in.png");
   width: 128px;
   height: 128px;
 }
 
 .zombieout {
-  position: relative;
   background-image: url("images/caffeine_zombie_out.png");
   width: 128px;
   height: 128px;
 }
 
+.zomieangrier {
+/*  add another graphic for when zombie gets angrier if not hit it*/
+}
+
 .zombiehappy {
-  position: relative;
   background-image: url("images/caffeine_zombie_happy.png");
   width: 128px;
   height: 128px;
