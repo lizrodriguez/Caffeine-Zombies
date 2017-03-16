@@ -1,93 +1,89 @@
 jQuery(function() {
   //create board and show rules
   let score = {barista: 0, zombie: 0}; //object to keep score
-
-  let timer = 10;
+  let timer = 30;
   let zombieSpawn;
+  // let $zombies = $('<div class="zombie"></div>');
 
   function displayBoard(){
-    $('div#board').hide();  //hide cafe board by default
+    $('#board').hide();  //hide cafe board by default
     //if start button is pressed
-    $('button#start').click(function() {
-      $('div#rules').hide(); //hide rules
-      $('div#board').show(); //then display empty cafe
-      // console.log("start button clicked");
+    $('#start').click(function() {
+      $('#rules').hide(); //hide rules
+      $('#board').show(); //then display cafe
+      console.log("start button clicked");
       $('#gameover').hide();
     });
   }
   displayBoard();
 
-  $('button#ready').click(function() {
-    // console.log("ready button clicked");
+  $('#ready').click(function() {
+    console.log("ready button clicked");
     $('#boardInstruction').remove();
-    $('button#ready').remove();
-
+    $('#ready').remove();
     $('#timer').text('Timer: ' + timer);
     setTimeout(countdownByOne, 1000);
-    // createZombie(); //create a loop to get extra zombies?
 
     function countdownByOne(){
       timer -= 1;
       $('#timer').text('Timer: ' + timer);
-
       if(timer > 0){
         setTimeout(countdownByOne, 1000);
       }
       else {
-        $('#gameover').show();
         clearInterval(zombieSpawn); //stops zombies from spawning
+        $('#gameover').show();
       }
-
-
     }
 
-    zombieSpawn = setInterval(function(){
-      createZombie();
-      }, 2500);
-  });
+    zombieSpawn = setInterval(function(){ //create zombies every 2.5 seconds
+    createZombie();
+    }, 2500);
+  });//end buttonready
 
   function createZombie(){
-  // let $zombies = $('div').last().addClass('zombiein');
-  let $zombies = $('<div class="zombiein"></div>');
-  $zombies.appendTo($('#board'));// $zombies.appendTo($('<div id="board>'));
-  let x = Math.random() * 600;
-  let y = Math.random() * 400;
-
-  $zombies.css('top', y);
-  $zombies.css('left', x);
-
-  console.log('x : ' + x + ' y : ' + y);
-
+    //create zombie with class zombiein
+    $zombies = $('<div class="zombieIn"></div>');
+    $zombies.appendTo($('#board'));
+    //position zombies in random locations
+    let x = Math.random() * 600;
+    let y = Math.random() * 400;
+    $zombies.css('top', y);
+    $zombies.css('left', x);
+    // console.log('x : ' + x + ' y : ' + y);
     setTimeout(function(){
-    angryZombie($zombies);
-    }, Math.random()*5000); //after random amount of time, show zombieout/angry zombie
-  }
+      angryZombie($zombies);
+      }, Math.random()*1000); //after x seconds, zombies start to get angry
+  }//end createZombie
 
-  function angryZombie(zombies){
+  function angryZombie($zombies){
     if (timer ===0){
       return; //will exit if game is over (timer ===0)
     }
+    //zombieIn is already on the board
+    setTimeout(function(){
+      $zombies.removeClass("zombieIn").addClass("zombieOut");
+      }, Math.random()*3000); //after x sec, show zombieOut
 
-    zombies.addClass('zombieout');
+    setTimeout(function(){
+      $zombies.removeClass("zombieOut").addClass('zombieAngry');
+      }, Math.random()*3000); //after x sec, show zombieAngry
+
+    $zombies.on("click", function(){  //shoot espresso at zombies, they become happy
+    score.zombie+=10;   //increase zombie score if angry and no hits
+    console.log("zombie score: " + score.zombie);
+    $zombies.removeClass("zombieAngry").addClass('zombieHappy');
+    console.log("zombie is happy");
+    setTimeout(function(){ //remove happy zombies after x seconds
+    $zombies.remove();
+    }, 500);
+    score.barista+=10;
+    console.log("barista score: " + score.barista);
+     //count points towards you/barista
+    // $('p#score').text('Barista Score: ' + score.barista + 'Zombie Score:' + score.zombie);
+
+    });
+
   }
-
-  // //if zombie doesn't get hit after 3 seconds, then display zombieAngrier increase its score
-  // score.zombie+=10;
-  // console.log("zombie score: " + score.zombie);
-
-  function shootZombie(){
-    let $zombies = $('div').last();
-    $zombies.appendTo($('<div id="board>'));
-      $zombies.on("click", function(){
-        $zombies.addClass('zombiehappy');
-        setTimeout(function(){
-        $zombies.remove();
-        }, 1000);
-        score.barista+=10;
-        console.log("barista score: " + score.barista);
-       //count points towards you/barista
-      });
-  }
-  //shootZombie();
 
 });

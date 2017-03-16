@@ -65,6 +65,15 @@ p#rules {
   color: #FFFFFF;
 }
 
+#score {
+  top: 600px;
+  left: 600px;
+  position: absolute;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
 #gameover {
   position: absolute;
   font-family: 'VT323', monospace;
@@ -75,24 +84,29 @@ p#rules {
   top:200px;
 }
 
-.zombiein {
+.zombieIn {
   position: absolute;
   background-image: url("images/caffeine_zombie_in.png");
   width: 128px;
   height: 128px;
 }
 
-.zombieout {
+.zombieOut {
+  position: absolute;
   background-image: url("images/caffeine_zombie_out.png");
   width: 128px;
   height: 128px;
 }
 
-.zomieangrier {
-/*  add another graphic for when zombie gets angrier if not hit it*/
+.zombieAngry {
+  position: absolute;
+  background-image: url("images/caffeine_zombie_angry.png");
+  width: 128px;
+  height: 128px;
 }
 
-.zombiehappy {
+.zombieHappy {
+  position: absolute;
   background-image: url("images/caffeine_zombie_happy.png");
   width: 128px;
   height: 128px;
