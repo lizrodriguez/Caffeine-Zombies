@@ -1,6 +1,8 @@
 jQuery(function() {
   //create board and show rules
-  let score = {barista: 0, zombie: 0}; //object to keep score
+  // let score = {barista: 0, zombie: 0}; //object to keep score
+  let baristaScore = 0;
+  let zombieScore = 0;
   let timer = 30;
   let zombieSpawn;
   // let $zombies = $('<div class="zombie"></div>');
@@ -68,19 +70,21 @@ jQuery(function() {
     setTimeout(function(){
       $zombies.removeClass("zombieOut").addClass('zombieAngry');
       }, Math.random()*3000); //after x sec, show zombieAngry
+    zombieScore += 1;   //increase zombie score if no hits
+    console.log("zombie score: " + zombieScore);
 
-    $zombies.on("click", function(){  //shoot espresso at zombies, they become happy
-    score.zombie+=10;   //increase zombie score if angry and no hits
-    console.log("zombie score: " + score.zombie);
+    $zombies.on("click", function(){  //shoot espresso, they become happy
     $zombies.removeClass("zombieAngry").addClass('zombieHappy');
+
     console.log("zombie is happy");
     setTimeout(function(){ //remove happy zombies after x seconds
     $zombies.remove();
     }, 500);
-    score.barista+=10;
-    console.log("barista score: " + score.barista);
+    baristaScore += 1;
+    console.log("barista score: " + baristaScore);
      //count points towards you/barista
-    // $('p#score').text('Barista Score: ' + score.barista + 'Zombie Score:' + score.zombie);
+    $('#baristaScore').text('Barista Score: ' + baristaScore);
+    $('#zombieScore').text('Zombie Score: ' + zombieScore);
 
     });
 

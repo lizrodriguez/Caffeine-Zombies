@@ -11,7 +11,7 @@ h2 {
   color: #FFFFFF;
 }
 
-div {
+body, div {
   width: 800px;
   height: 600px;
 }
@@ -43,7 +43,7 @@ p#rules {
   font-size: 28px;
 }
 
-#board {
+div#board {
   background-image: url("images/coffee_shop.jpg");
   text-align:center;
 }
@@ -65,9 +65,17 @@ p#rules {
   color: #FFFFFF;
 }
 
-#score {
-  top: 600px;
-  left: 600px;
+#baristaScore {
+  top: 500px; /*y*/
+  left: 500px;  /*x*/
+  position: absolute;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+#zombieScore {
+  top: 540px; /*y*/
+  left: 500px; /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
   font-size: 20px;
@@ -77,8 +85,8 @@ p#rules {
 #gameover {
   position: absolute;
   font-family: 'VT323', monospace;
-  font-size: 80px;
-  color: #FFFFFF;
+  font-size: 100px;
+  color: #FF0000;
   text-align: center;
   width: 800px;
   top:200px;
