@@ -1,11 +1,11 @@
 h1 {
   font-family: 'VT323', monospace;
-  font-size: 30px;
+  font-size: 40px;
   color: #000000;
 }
 
 h2 {
-  padding: 10px;
+  padding: 20px;
   font-family: 'VT323', monospace;
   font-size: 30px;
   color: #FFFFFF;
@@ -22,6 +22,7 @@ div#rules {
 }
 
 button {
+  font-family: 'VT323', monospace;
   margin: 0 auto;
   background-color: #000000;
   border-radius: 8px;
@@ -29,7 +30,7 @@ button {
   color: white;
   padding: 14px 30px;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 button:hover {
@@ -40,7 +41,7 @@ p#rules {
   padding: 20px;
   text-align: left;
   font-family: 'VT323', monospace;
-  font-size: 28px;
+  font-size: 35px;
 }
 
 div#board {
@@ -49,6 +50,7 @@ div#board {
 }
 
 #boardInstruction {
+  position: relative;
   text-align: center;
   padding: 10px;
   font-family: 'VT323', monospace;
@@ -56,12 +58,16 @@ div#board {
   color: #FFFFFF;
 }
 
+span {
+  font-style: italic;
+}
+
 #timer {
   top: 10px;
-  left: 700px;
+  left: 680px;
   position: absolute;
   font-family: 'VT323', monospace;
-  font-size: 20px;
+  font-size: 30px;
   color: #FFFFFF;
 }
 
@@ -70,7 +76,7 @@ div#board {
   left: 500px;  /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
-  font-size: 20px;
+  font-size: 40px;
   color: #FFFFFF;
 }
 #zombieScore {
@@ -78,18 +84,18 @@ div#board {
   left: 500px; /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
-  font-size: 20px;
+  font-size: 40px;
   color: #FFFFFF;
 }
 
-#gameover {
+#gameOver {
   position: absolute;
   font-family: 'VT323', monospace;
-  font-size: 100px;
+  font-size: 180px;
   color: #FF0000;
   text-align: center;
-  width: 800px;
-  top:200px;
+/*  width: 800px;
+  top:200px;*/
 }
 
 .zombieIn {

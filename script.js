@@ -3,7 +3,7 @@ jQuery(function() {
   // let score = {barista: 0, zombie: 0}; //object to keep score
   let baristaScore = 0;
   let zombieScore = 0;
-  let timer = 30;
+  let timer = 10;
   let zombieSpawn;
   // let $zombies = $('<div class="zombie"></div>');
 
@@ -13,18 +13,22 @@ jQuery(function() {
     $('#start').click(function() {
       $('#rules').hide(); //hide rules
       $('#board').show(); //then display cafe
-      console.log("start button clicked");
-      $('#gameover').hide();
+      // console.log("start button clicked");
+      $('#gameOver').hide();
+      // $('#baristaScore').hide();
+      // $('#zombieScore').hide();
     });
   }
   displayBoard();
 
   $('#ready').click(function() {
-    console.log("ready button clicked");
+    // console.log("ready button clicked");
     $('#boardInstruction').remove();
     $('#ready').remove();
     $('#timer').text('Timer: ' + timer);
     setTimeout(countdownByOne, 1000);
+    $('#baristaScore').text('Barista Score: ' + baristaScore);
+    $('#zombieScore').text(' Zombie Score: ' + zombieScore);
 
     function countdownByOne(){
       timer -= 1;
@@ -33,12 +37,12 @@ jQuery(function() {
         setTimeout(countdownByOne, 1000);
       }
       else {
-        clearInterval(zombieSpawn); //stops zombies from spawning
-        $('#gameover').show();
+        clearInterval(zombieSpawn); //stops zombies from spawning - https://www.w3schools.com/jsref/met_win_clearinterval.asp
+        $('#gameOver').show();
       }
     }
 
-    zombieSpawn = setInterval(function(){ //create zombies every 2.5 seconds
+    zombieSpawn = setInterval(function(){ //create zombies every x seconds
     createZombie();
     }, 2500);
   });//end buttonready
@@ -47,6 +51,8 @@ jQuery(function() {
     //create zombie with class zombiein
     $zombies = $('<div class="zombieIn"></div>');
     $zombies.appendTo($('#board'));
+    $('body').css('cursor', 'url(images/coffee_cup_50x50.gif), auto');//http://madgharr.deviantart.com/art/Coffee-16x16-369083436
+
     //position zombies in random locations
     let x = Math.random() * 600;
     let y = Math.random() * 400;
@@ -68,26 +74,27 @@ jQuery(function() {
       }, Math.random()*3000); //after x sec, show zombieOut
 
     setTimeout(function(){
-      $zombies.removeClass("zombieOut").addClass('zombieAngry');
+      $zombies.removeClass("zombieOut").addClass("zombieAngry");
       }, Math.random()*3000); //after x sec, show zombieAngry
-    zombieScore += 1;   //increase zombie score if no hits
-    console.log("zombie score: " + zombieScore);
 
-    $zombies.on("click", function(){  //shoot espresso, they become happy
+      if($('.zombieAngry')[0]){ //http://stackoverflow.com/questions/5783280/check-if-div-with-certain-class-name-exists
+        $('#zombieScore').text(' Zombie Score: ' + zombieScore);
+        zombieScore += 1;   //increase zombie score if no hits
+        // console.log("zombie score: " + zombieScore);
+        }
+
+    $zombies.on("click", function(){  //shoot espresso at zombies, they become happy
     $zombies.removeClass("zombieAngry").addClass('zombieHappy');
-
     console.log("zombie is happy");
     setTimeout(function(){ //remove happy zombies after x seconds
     $zombies.remove();
     }, 500);
     baristaScore += 1;
-    console.log("barista score: " + baristaScore);
+    // console.log("barista score: " + baristaScore);
      //count points towards you/barista
     $('#baristaScore').text('Barista Score: ' + baristaScore);
-    $('#zombieScore').text('Zombie Score: ' + zombieScore);
+    $('#zombieScore').text(' Zombie Score: ' + zombieScore);
 
     });
-
   }
-
 });
