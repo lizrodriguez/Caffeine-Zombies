@@ -3,9 +3,8 @@ jQuery(function() {
   // let score = {barista: 0, zombie: 0}; //object to keep score
   let baristaScore = 0;
   let zombieScore = 0;
-  let timer = 20;
+  let timer = 30;
   let zombieSpawn;
-  // let $zombies = $('<div class="zombie"></div>');
 
   function displayBoard(){
     $('#board').hide();  //hide cafe board by default
@@ -23,11 +22,10 @@ jQuery(function() {
   $('#ready').click(function() {
     // console.log("ready button clicked");
     $('#boardInstruction').remove();
+    $('h2').remove();
     $('#ready').remove();
     $('#timer').text('Timer: ' + timer);
     setTimeout(countdownByOne, 1000);
-    $('#baristaScore').text('Barista Score: ' + baristaScore);
-    $('#zombieScore').text(' Zombie Score: ' + zombieScore);
 
     function countdownByOne(){
       timer -= 1;
@@ -37,7 +35,12 @@ jQuery(function() {
       }
       else {
         clearInterval(zombieSpawn); //stops zombies from spawning - https://www.w3schools.com/jsref/met_win_clearinterval.asp
-        $('.zombie').remove(); //removes all zombies with the class zombie
+        $('.zombietrakr').remove(); //removes all zombies with the class zombie
+        if (baristaScore > zombieScore){
+          console.log("You win, you saavy Barista!");
+          } else {
+            console.log("You lose! The customers left angry and without coffee.");
+          }
         $('#gameOver').show();
       }
     }
@@ -50,8 +53,8 @@ jQuery(function() {
   function createZombie(){
     //create zombie with class zombiein
     $zombies = $('<div class="zombieIn"></div>');
+    $zombies.addClass("zombietrakr"); //to track zombie for removal
     $zombies.appendTo($('#board'));
-    $zombies.attr('class', 'zombie'); //add a zombie class to track all zombies on the board, regardless of main class
     $('body').css('cursor', 'url(images/coffee_cup_50x50.gif), auto');//http://madgharr.deviantart.com/art/Coffee-16x16-369083436
 
     //position zombies in random locations
@@ -62,7 +65,7 @@ jQuery(function() {
     // console.log('x : ' + x + ' y : ' + y);
     setTimeout(function(){
       angryZombie($zombies);
-      }, Math.random()*1000); //after x seconds, zombies start to get angry
+      }, Math.random()*2000); //after x seconds, zombies start to get angry
   }//end createZombie
 
   function angryZombie($zombies){
@@ -71,35 +74,30 @@ jQuery(function() {
     }
     //zombieIn is already on the board
     setTimeout(function(){
-      $zombies.removeClass("zombieIn").addClass("zombieOut");
+      $zombies.removeClass("zombieIn").addClass("zombietrakr zombieOut");
       }, Math.random()*3000); //after x sec, show zombieOut
 
     setTimeout(function(){
-      $zombies.removeClass("zombieOut").addClass("zombieAngry");
-      }, Math.random()*3000); //after x sec, show zombieAngry
+      $zombies.removeClass("zombieOut").addClass("zombietrakr zombieAngry");
+      }, Math.random()*4000); //after x sec, show zombieAngry
 
       if($('.zombieAngry')[0]){ //http://stackoverflow.com/questions/5783280/check-if-div-with-certain-class-name-exists
         zombieScore += 1;   //increase zombie score if no hits
         $('#zombieScore').text(' Zombie Score: ' + zombieScore);
-        // console.log("zombie score: " + zombieScore);
+        $('.zombieAngry').remove();
         }
 
     $zombies.on("click", function(){  //shoot espresso at zombies, they become happy
-    $zombies.removeClass("zombieAngry").addClass('zombieHappy');
-    // console.log("zombie is happy");
-    setTimeout(function(){ //remove happy zombies after x seconds
-    $zombies.remove();
-    }, 500);
-    baristaScore += 1;
-    // console.log("barista score: " + baristaScore);
-     //count points towards you/barista
-    $('#baristaScore').text('Barista Score: ' + baristaScore);
-    $('#zombieScore').text(' Zombie Score: ' + zombieScore);
-
-    });
+      $zombies.removeClass("zombieAngry").addClass('zombietrakr zombieHappy');
+      setTimeout(function(){ //remove happy zombies after x seconds
+      $zombies.remove();
+      }, 500);
+      baristaScore += 1;
+       //count points towards you/barista
+      $('#baristaScore').text('Barista Score: ' + baristaScore);
+      $('#zombieScore').text('  Zombie Score: ' + zombieScore);
+      }); //end onclick
   }//end angryZombie
 
-  // function clearBoard(){
-
-  // }
+  // $zombies.attr('class', 'zombietrakr'); //add a zombie class to track all zombies on the board, regardless of main class
 });

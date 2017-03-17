@@ -5,29 +5,23 @@ h1 {
   color: #FFFFFF;
 }
 
-h2 {
-  padding: 20px;
-  font-family: 'VT323', monospace;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  font-size: 30px;
-  color: #FFFFFF;
-}
-
 body, div {
+  position: absolute;
   width: 800px;
   height: 600px;
 }
 
 div#rules {
+  padding: 0;
+  margin: 0 auto;
   background-image: url("images/coffee_storefront_px.png");
   text-align:center;
-  color: #FFFFFF;
 }
 
 button {
   font-family: 'VT323', monospace;
-  margin: 0 auto;
-  background-color: #000000;
+  margin: 30px auto;
+  background-color: #2651A6;
   border-radius: 8px;
   border: none;
   color: white;
@@ -54,7 +48,8 @@ div#board {
   text-align:center;
 }
 
-#boardInstruction {
+p#boardInstruction {
+  margin: 0 auto;
   position: relative;
   font-family: 'VT323', monospace;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -69,8 +64,8 @@ span {
 }
 
 #timer {
-  top: 10px;
-  left: 680px;
+  top: 8px;
+  left: 640px;
   position: absolute;
   font-family: 'VT323', monospace;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -79,7 +74,7 @@ span {
 }
 
 #baristaScore {
-  top: 500px; /*y*/
+  top: 460px; /*y*/
   left: 500px;  /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
@@ -88,7 +83,7 @@ span {
   color: #FFFFFF;
 }
 #zombieScore {
-  top: 540px; /*y*/
+  top: 500px; /*y*/
   left: 500px; /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
