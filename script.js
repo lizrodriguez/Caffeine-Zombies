@@ -3,20 +3,19 @@ jQuery(function() {
   // let score = {barista: 0, zombie: 0}; //object to keep score
   let baristaScore = 0;
   let zombieScore = 0;
-  let timer = 10;
+  let timer = 20;
   let zombieSpawn;
   // let $zombies = $('<div class="zombie"></div>');
 
   function displayBoard(){
     $('#board').hide();  //hide cafe board by default
+    $('#gameOver').hide(); //hide gameOver until needed
     //if start button is pressed
+
     $('#start').click(function() {
       $('#rules').hide(); //hide rules
       $('#board').show(); //then display cafe
       // console.log("start button clicked");
-      $('#gameOver').hide();
-      // $('#baristaScore').hide();
-      // $('#zombieScore').hide();
     });
   }
   displayBoard();
@@ -38,6 +37,7 @@ jQuery(function() {
       }
       else {
         clearInterval(zombieSpawn); //stops zombies from spawning - https://www.w3schools.com/jsref/met_win_clearinterval.asp
+        $('.zombie').remove(); //removes all zombies with the class zombie
         $('#gameOver').show();
       }
     }
@@ -51,6 +51,7 @@ jQuery(function() {
     //create zombie with class zombiein
     $zombies = $('<div class="zombieIn"></div>');
     $zombies.appendTo($('#board'));
+    $zombies.attr('class', 'zombie'); //add a zombie class to track all zombies on the board, regardless of main class
     $('body').css('cursor', 'url(images/coffee_cup_50x50.gif), auto');//http://madgharr.deviantart.com/art/Coffee-16x16-369083436
 
     //position zombies in random locations
@@ -78,14 +79,14 @@ jQuery(function() {
       }, Math.random()*3000); //after x sec, show zombieAngry
 
       if($('.zombieAngry')[0]){ //http://stackoverflow.com/questions/5783280/check-if-div-with-certain-class-name-exists
-        $('#zombieScore').text(' Zombie Score: ' + zombieScore);
         zombieScore += 1;   //increase zombie score if no hits
+        $('#zombieScore').text(' Zombie Score: ' + zombieScore);
         // console.log("zombie score: " + zombieScore);
         }
 
     $zombies.on("click", function(){  //shoot espresso at zombies, they become happy
     $zombies.removeClass("zombieAngry").addClass('zombieHappy');
-    console.log("zombie is happy");
+    // console.log("zombie is happy");
     setTimeout(function(){ //remove happy zombies after x seconds
     $zombies.remove();
     }, 500);
@@ -96,5 +97,9 @@ jQuery(function() {
     $('#zombieScore').text(' Zombie Score: ' + zombieScore);
 
     });
-  }
+  }//end angryZombie
+
+  // function clearBoard(){
+
+  // }
 });

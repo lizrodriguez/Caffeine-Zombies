@@ -1,12 +1,14 @@
 h1 {
   font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 40px;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 h2 {
   padding: 20px;
   font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 30px;
   color: #FFFFFF;
 }
@@ -17,8 +19,9 @@ body, div {
 }
 
 div#rules {
-  background: #eee;
+  background-image: url("images/coffee_storefront_px.png");
   text-align:center;
+  color: #FFFFFF;
 }
 
 button {
@@ -37,11 +40,13 @@ button:hover {
   box-shadow: 5px 5px 5px #888888;
 }
 
-p#rules {
+#rules {
   padding: 20px;
   text-align: left;
   font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 35px;
+  color: #FFFFFF;
 }
 
 div#board {
@@ -51,9 +56,10 @@ div#board {
 
 #boardInstruction {
   position: relative;
+  font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   text-align: center;
   padding: 10px;
-  font-family: 'VT323', monospace;
   font-size: 50px;
   color: #FFFFFF;
 }
@@ -67,6 +73,7 @@ span {
   left: 680px;
   position: absolute;
   font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 30px;
   color: #FFFFFF;
 }
@@ -76,6 +83,7 @@ span {
   left: 500px;  /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 40px;
   color: #FFFFFF;
 }
@@ -84,6 +92,7 @@ span {
   left: 500px; /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   font-size: 40px;
   color: #FFFFFF;
 }
@@ -91,11 +100,10 @@ span {
 #gameOver {
   position: absolute;
   font-family: 'VT323', monospace;
-  font-size: 180px;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 110px;
   color: #FF0000;
   text-align: center;
-/*  width: 800px;
-  top:200px;*/
 }
 
 .zombieIn {
