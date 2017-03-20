@@ -19,6 +19,96 @@ jQuery(function() {
   }
   displayBoard();
 
+function gameLevelEasy(){
+    $('#gameLevelEasy').click(function() {
+    // console.log("ready button clicked");
+    $('#boardInstruction').remove();
+    $('h2').remove();
+    $('#gameLevelEasy').remove();
+    $('#gameLevelHard').remove();
+    $('#timer').text('Timer: ' + timer);
+    setTimeout(countdownByOne, 1000);
+
+    function countdownByOne(){
+      timer -= 1;
+      $('#timer').text('Timer: ' + timer);
+      if(timer > 0){
+        setTimeout(countdownByOne, 1000);
+      }
+      else {
+        clearInterval(zombieSpawn); //stops zombies from spawning - https://www.w3schools.com/jsref/met_win_clearinterval.asp
+        $('.zombietrakr').remove(); //removes all zombies with the class zombie
+
+  if (baristaScore > zombieScore){
+            $('#gameOver').show();
+            $('#gameOver').text("You win, you saavy Barista!");
+            // console.log("You win, you saavy Barista!");
+            } else {
+              $('#gameOver').show();
+              $('#gameOver').text("You lose! The customers left angry and without coffee.");
+              // console.log("You lose! The customers left angry and without coffee.");
+            }
+            if (baristaScore === zombieScore){
+              $('#gameOver').show();
+              $('#gameOver').text("You tied. Meh.");
+              // console.log("You tied");
+            }
+      }
+    }//end countDownByOne
+    zombieSpawn = setInterval(function(){ //create zombies every x seconds
+    createZombie();
+    }, 2500);
+  });//end button
+}//end gamelevelEasy
+gameLevelEasy();
+
+
+
+function gameLevelHard(){
+    $('#gameLevelHard').click(function() {
+    // console.log("ready button clicked");
+    $('#boardInstruction').remove();
+    $('h2').remove();
+    $('#gameLevelEasy').remove();
+    $('#gameLevelHard').remove();
+    $('#timer').text('Timer: ' + timer);
+    setTimeout(countdownByOne, 1000);
+
+    function countdownByOne(){
+      timer -= 1;
+      $('#timer').text('Timer: ' + timer);
+      if(timer > 0){
+        setTimeout(countdownByOne, 1000);
+      }
+      else {
+        clearInterval(zombieSpawn); //stops zombies from spawning - https://www.w3schools.com/jsref/met_win_clearinterval.asp
+        $('.zombietrakr').remove(); //removes all zombies with the class zombie
+
+  if (baristaScore > zombieScore){
+            $('#gameOver').show();
+            $('#gameOver').text("You win, you saavy Barista!");
+            // console.log("You win, you saavy Barista!");
+            } else {
+              $('#gameOver').show();
+              $('#gameOver').text("You lose! The customers left angry and without coffee.");
+              // console.log("You lose! The customers left angry and without coffee.");
+            }
+            if (baristaScore === zombieScore){
+              $('#gameOver').show();
+              $('#gameOver').text("You tied. Meh.");
+              // console.log("You tied");
+            }
+      }
+    }//end countDownByOne
+    zombieSpawn = setInterval(function(){ //create zombies every x seconds
+    createZombie();
+    }, 700);
+  });//end button
+}//end gamelevelEasy
+gameLevelHard();
+
+
+function readyButton(){
   $('#ready').click(function() {
     // console.log("ready button clicked");
     $('#boardInstruction').remove();
@@ -36,19 +126,29 @@ jQuery(function() {
       else {
         clearInterval(zombieSpawn); //stops zombies from spawning - https://www.w3schools.com/jsref/met_win_clearinterval.asp
         $('.zombietrakr').remove(); //removes all zombies with the class zombie
-        if (baristaScore > zombieScore){
-          console.log("You win, you saavy Barista!");
-          } else {
-            console.log("You lose! The customers left angry and without coffee.");
-          }
-        $('#gameOver').show();
-      }
-    }
 
+if (baristaScore > zombieScore){
+            $('#gameOver').show();
+            $('#gameOver').text("You win, you saavy Barista!");
+            // console.log("You win, you saavy Barista!");
+            } else {
+              $('#gameOver').show();
+              $('#gameOver').text("You lose! The customers left angry and without coffee.");
+              // console.log("You lose! The customers left angry and without coffee.");
+            }
+            if (baristaScore === zombieScore){
+              $('#gameOver').show();
+              $('#gameOver').text("You tied. Meh.");
+              // console.log("You tied");
+            }
+      }
+    }//end countDownByOne
     zombieSpawn = setInterval(function(){ //create zombies every x seconds
     createZombie();
     }, 2500);
   });//end buttonready
+} //end readyButton fn
+// readyButton();
 
   function createZombie(){
     //create zombie with class zombiein

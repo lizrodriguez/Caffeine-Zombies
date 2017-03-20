@@ -17,11 +17,11 @@ I used two images from https://pixabay.com/ for the cafe store front, as well as
 
 As a little fun for the cursor movement, I decided to use an image from an artist on deviantArt named "Madgharr" asking for permission. http://madgharr.deviantart.com/art/Coffee-16x16-369083436. The coffee cup shows when "shooting" it at the zombies. Ideally I would like to show motion with the cursor, so hopefully can figure out how to do that in the future!
 
-I created a timer (default is 30 seconds), as well as kept score on the screen.
+I created a timer (default is 30 seconds), as well as kept score on the screen. I was also able to create "easy" and "hard" levels.
 
 The unsolved problems I have are:
 
-1. The timer starts, and the first zombie populates 3 seconds afterwards. This is because my first "random" zombie goes on the screen every 3 seconds. Ideally the zombies will pop up right away when the timer starts.
+1. The score pops up after you or the zombie gets a score. I'd like for it to show for the entire game.
 
-2. Timing of the zombies going on screen was tough, as I had three "stages" of anger.  I used setTimeout, but due to the nature of that function, found it a bit wonky.
+2. Timing of the zombies going on screen was tough, as I had three "stages" of anger.  I used setTimeout, but due to the nature of that function, found it a bit inconsistent.
 

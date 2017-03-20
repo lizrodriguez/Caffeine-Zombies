@@ -21,7 +21,7 @@ div#rules {
 button {
   font-family: 'VT323', monospace;
   margin: 30px auto;
-  background-color: #2651A6;
+  background-color: #004C7F;
   border-radius: 8px;
   border: none;
   color: white;
@@ -55,7 +55,7 @@ p#boardInstruction {
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   text-align: center;
   padding: 10px;
-  font-size: 50px;
+  font-size: 45px;
   color: #FFFFFF;
 }
 
@@ -74,7 +74,7 @@ span {
 }
 
 #baristaScore {
-  top: 460px; /*y*/
+  top: 450px; /*y*/
   left: 500px;  /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
@@ -83,7 +83,7 @@ span {
   color: #FFFFFF;
 }
 #zombieScore {
-  top: 500px; /*y*/
+  top: 490px; /*y*/
   left: 500px; /*x*/
   position: absolute;
   font-family: 'VT323', monospace;
@@ -96,7 +96,7 @@ span {
   position: absolute;
   font-family: 'VT323', monospace;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  font-size: 110px;
+  font-size: 90px;
   color: #FF0000;
   text-align: center;
 }
