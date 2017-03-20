@@ -135,11 +135,11 @@ gameLevelHard();
     //zombieIn is already on the board
     setTimeout(function(){
       $zombies.removeClass("zombieIn").addClass("zombietrakr zombieOut");
-      }, Math.random()*3000); //after x sec, show zombieOut
+      }, 2000); //after x sec, show zombieOut
 
     setTimeout(function(){
       $zombies.removeClass("zombieOut").addClass("zombietrakr zombieAngry");
-      }, Math.random()*4000); //after x sec, show zombieAngry
+      }, 4000); //after x sec, show zombieAngry
 
       if($('.zombieAngry')[0]){ //http://stackoverflow.com/questions/5783280/check-if-div-with-certain-class-name-exists
         zombieScore += 1;   //increase zombie score if no hits
