@@ -1,4 +1,6 @@
-A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc. #### Planning Phase
+Caffeine Zombies!
+by Liz Rodriguez
+https://lizrodriguez.github.io
 
 I decided to create a game using HTML, CSS and Javascript with JQuery. My approach was to put a fun spin on a traditional click and shoot game.  I love coffee, and have been drinking plenty of it during these weeks of learning, so I thought why not try to incorporate that into my game!
 

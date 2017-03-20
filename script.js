@@ -1,3 +1,5 @@
+// Liz Rodriguez
+// https://lizrodriguez.github.io
 jQuery(function() {
   //create board and show rules
   // let score = {barista: 0, zombie: 0}; //object to keep score

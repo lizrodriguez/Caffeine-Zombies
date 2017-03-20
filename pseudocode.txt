@@ -9,13 +9,13 @@ x 5. they will "pop out" after X number of seconds
   x 6a. if you shoot enemy, you score points and they become happy, disappear after .5 sec
   x 6b. if zombie doesn't get hit after 3 seconds, then increase its score, disappear after 1 sec
       6.b.i. enemy comes closer
-        then (re-draw screen with enemy in a random place)
-7. you lose if enemy has more points
-8. create timer countdown for game (10 seconds down to 0)
+        then (re-draw screen with enemy in a random place) - not complete
+x 7. you lose if enemy has more points
+x 8. create timer countdown for game (X seconds down to 0)
   x 8a. countdown appears on corner of screen
   x 8b. when timer = 0, game is over
-    8c. clear zombies from board when game is over
+  x 8c. clear zombies from board when game is over
 x 9. display score
 
-fundamentals - try to make zombies happy after 10 seconds
+fundamentals - try to make zombies happy after 30 seconds
 
