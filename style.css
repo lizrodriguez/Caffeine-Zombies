@@ -34,6 +34,14 @@ button:hover {
   box-shadow: 5px 5px 5px #888888;
 }
 
+button#start{
+  background-color: #00687F;
+}
+
+button#gameLevelHard{
+  background-color: #CC0F00;
+}
+
 #rules {
   padding: 20px;
   text-align: left;
