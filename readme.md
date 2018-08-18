@@ -2,7 +2,7 @@
 
 by Liz Rodriguez
 
-http://lizrodriguez.io/projects/caffeinezombies
+https://binarydigit.itch.io/caffeine-zombies
 
 I decided to create a game using HTML, CSS and Javascript with JQuery. My approach was to put a fun spin on a traditional click and shoot game.  I love coffee, and have been drinking plenty of it during these weeks of learning, so I thought why not try to incorporate that into my game!
 
